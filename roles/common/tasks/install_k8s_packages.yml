@@ -29,7 +29,7 @@
     yum_repository:
       name: kubernetes
       description: Kubernetes
-      baseurl: http://yum.kubernetes.io/repos/kubernetes-el7-x86_64
+      baseurl: http://yum.kubernetes.io/repos/kubernetes-el7-{{ arch | default (x86_64) }}
       gpgcheck: 0
     when: ansible_os_family == "RedHat"
 
